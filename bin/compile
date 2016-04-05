@@ -65,3 +65,14 @@ fi
 
 # Set up the environment for runtimes now that compilation has finished
 echo "export PATH=\$HOME/.texlive/bin/${PLATFORM}:\$PATH" >> $PROFILE_D
+
+# Install any custom packages
+if [ -f $BUILD_DIR/.texlive-packages ]; then
+    # Update tlmgr, as outdated versions refuse to install packages
+    tlmgr update --self
+
+    for PACKAGE in $(cat $BUILD_DIR/.texlive-packages); do
+        build-step "Installing package $PACKAGE"
+        tlmgr install $PACKAGE
+    done
+fi
