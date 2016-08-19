@@ -10,8 +10,8 @@ make_tempfile() {
   mktemp -t texlive.XXXXXX
 }
 
-PKGS_ADD="fontspec float eurosym tabto-ltx vntex"
-PKGS_REMOVE="amsfonts koma-script"
+PKGS_ADD="amssymb amsfonts fontspec float eurosym tabto-ltx vntex"
+PKGS_REMOVE="koma-script"
 
 REPO="http://ctan.mines-albi.fr"
 INSTALLER_URL="$REPO/systems/texlive/tlnet/install-tl-unx.tar.gz"
