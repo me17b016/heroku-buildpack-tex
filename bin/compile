@@ -72,6 +72,9 @@ if [ -f $BUILD_DIR/.texlive-packages ]; then
     # Update tlmgr, as outdated versions refuse to install packages
     tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
     tlmgr update --self
+    echo "which net install"
+    which net-install
+    echo "end"
 
     for PACKAGE in $(cat $BUILD_DIR/.texlive-packages); do
         build-step "Installing package $PACKAGE"
