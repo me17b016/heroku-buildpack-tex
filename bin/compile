@@ -70,11 +70,11 @@ echo "export PATH=\$HOME/.texlive/bin/${PLATFORM}:\$PATH" >> $PROFILE_D
 if [ -f $BUILD_DIR/.texlive-packages ]; then
     tlmgr init-usertree
     # Update tlmgr, as outdated versions refuse to install packages
-    tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
-    tlmgr update --self
     echo "which net install"
     which net-install
-    echo "end"
+    echo "wat"
+    tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final
+    tlmgr update --self
 
     for PACKAGE in $(cat $BUILD_DIR/.texlive-packages); do
         build-step "Installing package $PACKAGE"
