@@ -74,6 +74,7 @@ if [ -f $BUILD_DIR/.texlive-packages ]; then
 
     for PACKAGE in $(cat $BUILD_DIR/.texlive-packages); do
         build-step "Installing package $PACKAGE"
-        tlmgr install $PACKAGE
+        install-tl $PACKAGE
+        #tlmgr install $PACKAGE
     done
 fi
