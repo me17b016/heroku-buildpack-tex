@@ -10,7 +10,7 @@ make_tempfile() {
   mktemp -t texlive.XXXXXX
 }
 
-PKGS_ADD="amssymb amsfonts fontspec float eurosym tabto-ltx vntex"
+PKGS_ADD="anysize amsmath amssymb graphicx geometry color verbatim tabularx mdwlist latexsym multirow hyperref"
 PKGS_REMOVE="koma-script"
 
 REPO="http://ctan.mines-albi.fr"
